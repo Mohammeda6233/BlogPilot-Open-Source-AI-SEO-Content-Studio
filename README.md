@@ -325,6 +325,222 @@ All user data lives in `./data/blogpilot.db`. Nothing is created outside the pro
 
 ---
 
+## 📖 Step-by-step usage guide
+
+> **Deep dive:** See [USAGE.md](USAGE.md) for the complete walkthrough of every feature with troubleshooting tips.
+
+A condensed 18-step tour of every workflow.
+
+### 🟦 Setup
+
+<details>
+<summary><b>Step 1 — Install</b></summary>
+
+```bash
+git clone https://github.com/IamRamgarhia/blogpilot-ai
+cd blogpilot-ai
+./install.sh          # macOS / Linux
+.\install.ps1         # Windows
+```
+
+The installer creates a Desktop shortcut. Double-click it any time to launch.
+</details>
+
+<details>
+<summary><b>Step 2 — Configure an AI key (optional but recommended)</b></summary>
+
+1. Open http://localhost:44321/settings
+2. Click **Get key** next to Google Gemini (free 1,500/day)
+3. Paste your key into `.env` after `GEMINI_API_KEY=`
+4. Restart: `npm run stop && npm run launch`
+5. Click **Test** on Settings page → "✓ reachable"
+
+Without an AI key, all features still work using deterministic fallbacks.
+</details>
+
+### 🟩 Discover
+
+<details>
+<summary><b>Step 3 — Add your first client</b></summary>
+
+1. Click **+ Add client** on the home page
+2. Paste any URL (e.g., `https://yoursite.com`)
+3. Click **Add and auto-discover**
+4. Wait 30-60s while BlogPilot crawls identity, sitemap, Core Web Vitals, social profiles
+5. Land on the client dashboard with 4 cards: Identity / Sitemap / Web Vitals / Socials
+</details>
+
+<details>
+<summary><b>Step 4 — Train brand voice (recommended)</b></summary>
+
+1. Click **Train voice** from the client dashboard
+2. Paste 3-5 published posts (≥100 chars each) into the textareas
+3. Click **Train voice**
+4. AI extracts a deep style profile (tone, voice, sentence length, heading case, em-dash, contractions, persona, phrases to keep/avoid)
+5. Every future post for this client matches this voice automatically
+</details>
+
+### 🟨 Research
+
+<details>
+<summary><b>Step 5 — Keyword research</b></summary>
+
+1. Click **Research** from the client dashboard
+2. Enter a seed keyword (e.g., `wordpress seo`)
+3. Click **Research** → 5-8s later you see:
+   - 25 keyword candidates with intent + format tags
+   - Bing SERP top-10 ranking pages
+4. Check the boxes next to keywords you want to write about
+5. Click **Generate calendar from selected →**
+</details>
+
+<details>
+<summary><b>Step 6 — Competitor + gap analysis</b></summary>
+
+1. Click **Competitors** from the client dashboard
+2. **Tab 1: Content gap analyzer** — enter a keyword → scrapes top-10 SERP + diffs against your client's existing posts → returns missing topics
+3. **Tab 2: Competitor blog scanner** — paste a competitor URL → crawls their sitemap → maps their content clusters
+</details>
+
+### 🟪 Plan
+
+<details>
+<summary><b>Step 7 — Content calendar</b></summary>
+
+1. Click **Calendar** from the client dashboard
+2. View 4-column Kanban: **Idea / Outline approved / Draft / Ready**
+3. Click any **Idea** card → goes to outline page
+4. Calendar auto-generates from the keywords you picked in research
+</details>
+
+<details>
+<summary><b>Step 8 — Schedule publishing dates</b></summary>
+
+1. Click **Schedule** from the client dashboard
+2. Click **Auto-schedule unscheduled**
+3. BlogPilot assigns publish dates based on detected niche (B2B = Tue/Thu mornings; food = Fri/Sun midday; etc.)
+4. Pillars before spokes; first post lands 2 business days out
+</details>
+
+### 🟧 Write
+
+<details>
+<summary><b>Step 9 — Outline a post</b></summary>
+
+1. Click an **Idea** card on the calendar
+2. AI auto-generates an outline in 4-8s (using outline-structure + skyscraper-technique + featured-snippet-targeting + paa-optimization methodologies)
+3. Review: title, TL;DR bullets, intro hook, H2 body sections, FAQs, conclusion, word count target
+4. Edit JSON in the right pane if needed
+5. Click **Approve & write full post →**
+</details>
+
+<details>
+<summary><b>Step 10 — Full draft + SEO checks</b></summary>
+
+The draft page shows:
+- **Left:** Full Markdown draft (editable)
+- **Right sidebar:** Meta title/description (char-counted) · 10 SEO checks · Internal link suggestions · Image briefs · Readability dashboard
+
+Download as `.md` / `.html` / `.json`, or click **Score** for live SERP grading.
+</details>
+
+### 🟥 Score
+
+<details>
+<summary><b>Step 11 — Real-time content score (Surfer-killer)</b></summary>
+
+1. Click **Score** from any draft page
+2. Enter the target keyword
+3. Click **Load SERP corpus** → 15-30s scrape of Bing top-10
+4. Edit the draft — **score updates 800ms after each keystroke**
+5. Watch the A-F grade card + 5 weighted score bars + term coverage chips + over-optimization warnings
+6. Aim for grade A or B before publishing
+</details>
+
+<details>
+<summary><b>Step 12 — Refresh an existing post</b></summary>
+
+1. Click **Refresh post** from the client dashboard
+2. Paste the URL of a published post you want to refresh
+3. Click **Refresh post** → 20-90s while AI fetches + rewrites with 2026 freshness + regenerates meta + schema
+4. Lands on a draft page with a change log of what was updated
+</details>
+
+### 🟦 Audit
+
+<details>
+<summary><b>Step 13 — Technical SEO audit (Screaming Frog-killer)</b></summary>
+
+1. Click **Audit** from the client dashboard
+2. Set max pages (default 50; up to 200)
+3. Click **Start audit** → 60-120s crawl
+4. View 5 severity stat cards (Pages / Critical / High / Medium / Low) — click any to filter
+5. Cannibalization callout if duplicate keyword targets exist
+6. Per-finding cards with rule ID, severity, fix suggestion, URL, evidence
+7. Click **.csv** to export the full report
+</details>
+
+### 🟫 Tools
+
+<details>
+<summary><b>Step 14 — PAA tree explorer</b></summary>
+
+1. Click **Tools** → **PAA tree** tab
+2. Enter a seed keyword
+3. Click **Build tree** → 60-90s recursive Bing PAA scrape
+4. View 3-level collapsible tree (~40 nodes)
+5. Each leaf is a candidate FAQ item or future blog post
+</details>
+
+<details>
+<summary><b>Step 15 — SERP feature detector</b></summary>
+
+1. Click **Tools** → **SERP features** tab
+2. Enter a target keyword
+3. Click **Detect features**
+4. 9-feature grid lights up: featured snippet / PAA / shopping / map pack / video / image / knowledge panel / news / X
+5. Plan capture strategy for each present feature using [serp-features-targeting.md](src/lib/methodologies/serp-features-targeting.md)
+</details>
+
+<details>
+<summary><b>Step 16 — Topic authority scorer</b></summary>
+
+1. Click **Tools** → **Topic authority** tab
+2. Enter the niche (e.g., `wordpress seo`)
+3. Click **Score authority**
+4. BlogPilot fetches the Wikipedia canonical article + extracts 30 entities
+5. Matches against all your client posts
+6. Returns 0-100 score, tier (Strong / Moderate / Surface), covered + missing entities, recommended posts to fill gaps
+</details>
+
+### 🟢 Distribute
+
+<details>
+<summary><b>Step 17 — Distribute (social, newsletter, CMS exports, share link)</b></summary>
+
+1. Click **Distribute →** from any draft page
+2. Click **Generate social** → native variants for X / LinkedIn / Instagram / Pinterest / WhatsApp
+3. Click **Generate newsletter** → short (240-char) + long (200-word) versions
+4. Click any CMS export button: **WordPress XML** / **Ghost JSON** / **Webflow CSV** / **Hugo** — downloads immediately
+5. Click **Create share link** → 30-day signed read-only URL for client review (no login)
+</details>
+
+### 🔵 Measure
+
+<details>
+<summary><b>Step 18 — Measure (rank tracking + GSC/GA4 import + decay alerts)</b></summary>
+
+1. Click **Measure** from the client dashboard
+2. **Search Console import:** paste your GSC CSV → click **Import GSC**
+3. **GA4 import:** paste your GA4 CSV → click **Import GA4**
+4. **Decay alerts** appear after 8+ weeks of GSC data — severity-graded with refresh recommendations
+5. **What to write next** queue — priority-scored backlog based on rank data + cluster coverage + decay rescue
+</details>
+
+> **For everything else** — hreflang manager, llms.txt generator, refresh post, voice trainer config, troubleshooting — read the full guide at [USAGE.md](USAGE.md).
+
+---
+
 ## 🔧 Tech stack
 
 | Layer | Choice | Rationale |
